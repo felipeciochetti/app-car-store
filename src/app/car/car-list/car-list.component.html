@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <button  class="btn btn-primary" [routerLink]="['../car-create']">Add New Car</button>
+
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of list_car | async">
+          <td>{{car.brand}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.year}}</td>
+          <td>{{car.price}}</td>
+          <td><button  class="btn btn-danger">Delete</button>
+            <button  class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
